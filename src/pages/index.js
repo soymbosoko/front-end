@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { useEffect } from "react";
 const exampleData = [
   
@@ -324,6 +325,7 @@ const exampleData = [
   export default function Lab4() {
     const [count, setCount] = useState(false);
     const [name, setName] = useState("");
+    const router = useRouter();
   
     const filter = exampleData.filter((item) =>
       item.firstname.toLowerCase().includes(name.toLowerCase())
@@ -339,6 +341,8 @@ const exampleData = [
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
+
+        <button className="border p-4 bg-red-200" onClick={() => router.push("/color_changing")}>hicheel 1</button>
   
         {}
         <button
